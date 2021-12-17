@@ -48,10 +48,10 @@ UART_BUFFER(gps, FIFO_SIZE_DMA, FIFO_SIZE_INT, USART1, NULL, true)
 // lin1, K-LINE = UART5
 // lin2, L-LINE = USART3
 UART_BUFFER(lin1, FIFO_SIZE_INT, FIFO_SIZE_INT, UART5, NULL, false)
-UART_BUFFER(lin2, FIFO_SIZE_INT, FIFO_SIZE_INT, USART3, NULL, false)
+UART_BUFFER(lin2, FIFO_SIZE_INT, FIFO_SIZE_INT, USART2, NULL, false)
 
 // debug = USART2
-UART_BUFFER(debug, FIFO_SIZE_INT, FIFO_SIZE_INT, USART2, debug_ring_callback, false)
+UART_BUFFER(debug, FIFO_SIZE_INT, FIFO_SIZE_INT, USART3, debug_ring_callback, false)
 
 uart_ring *get_ring_by_number(int a) {
   uart_ring *ring = NULL;

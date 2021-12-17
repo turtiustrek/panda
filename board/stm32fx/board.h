@@ -17,6 +17,7 @@
   #include "boards/black.h"
   #include "boards/uno.h"
   #include "boards/dos.h"
+  #include "boards/nucleo.h"
 #else
   #include "boards/pedal.h"
 #endif
@@ -42,6 +43,8 @@ void detect_board_type(void) {
       hw_type = HW_TYPE_BLACK_PANDA;
       current_board = &board_black;
     }
+    hw_type = HW_TYPE_WHITE_PANDA;
+    current_board = &board_nucleo;
   #else
     #ifdef PEDAL
       hw_type = HW_TYPE_PEDAL;
@@ -53,9 +56,9 @@ void detect_board_type(void) {
   #endif
 }
 
-bool has_external_debug_serial = 0;
+bool has_external_debug_serial = 1;
 
 void detect_external_debug_serial(void) {
   // detect if external serial debugging is present
-  has_external_debug_serial = detect_with_pull(GPIOA, 3, PULL_DOWN);
+  has_external_debug_serial = 1;
 }

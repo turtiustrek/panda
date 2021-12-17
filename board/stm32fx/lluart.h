@@ -118,8 +118,8 @@ void uart_interrupt_handler(uart_ring *q) {
 }
 
 void USART1_IRQ_Handler(void) { uart_interrupt_handler(&uart_ring_gps); }
-void USART2_IRQ_Handler(void) { uart_interrupt_handler(&uart_ring_debug); }
-void USART3_IRQ_Handler(void) { uart_interrupt_handler(&uart_ring_lin2); }
+void USART2_IRQ_Handler(void) { uart_interrupt_handler(&uart_ring_lin2); }
+void USART3_IRQ_Handler(void) { uart_interrupt_handler(&uart_ring_debug);}
 void UART5_IRQ_Handler(void) { uart_interrupt_handler(&uart_ring_lin1); }
 
 void DMA2_Stream5_IRQ_Handler(void) {
