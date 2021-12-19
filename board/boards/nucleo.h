@@ -29,13 +29,13 @@ void nucleo_enable_can_transceivers(bool enabled) {
 void nucleo_set_led(uint8_t color, bool enabled) {
   switch (color){
     case LED_RED:
-      set_gpio_output(GPIOB,14, !enabled);
+      set_gpio_output(GPIOB,14, enabled);
       break;
      case LED_GREEN:
-      set_gpio_output(GPIOB,0, !enabled);
+      set_gpio_output(GPIOB,0, enabled);
       break;
     case LED_BLUE:
-      set_gpio_output(GPIOB,7, !enabled);
+      set_gpio_output(GPIOB,7, enabled);
       break;
     default:
       break;
